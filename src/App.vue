@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link :to="{ name: 'contact' }"> Contacts</router-link><a>  |  </a>   
-      <router-link :to="{ name: 'posts' }"> Posts</router-link><a>  |  </a>    
+      <router-link :to="{ name: 'contact' }"> Contacts</router-link> |
+      <router-link :to="{ name: 'posts' }"> Posts</router-link>  |
       <router-link :to="{ name: 'login' }"> LogIn</router-link>
     </div>
     <router-view />

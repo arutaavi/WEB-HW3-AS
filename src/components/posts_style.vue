@@ -1,11 +1,11 @@
 <template>
  <div class = "post">
-    <div class= "post" v-for = "post in postList" :key="post.id">
-    <img src="" alt="Account" class = "post-heading">
-    <p class = "post-heading">{{post.date}}</p>
-    <img class = "post-content" src=post.postPicture alt="Penguins">
-    <p class = "post-content">{{post.text}}</p>
-    <input type="image" class = "like-button" name="Like" src="res/images/Like.png" alt="Like">
+    <div class= "post" v-for = "post in posting" :key="post.id">
+      <img v-bind:src="post.profilePicture" alt="Account" class="post-heading">
+      <p class = "post-heading">{{post.date}}</p>
+      <img class="post-content" v-bind:src="'../assets/' + post.postPicture" alt="Penguins">
+      <p class = "post-content">{{post.text}}</p>
+      <input type="image" class = "like-button" name="Like" src="../assets/Like.png" alt="Like">
     </div>
  </div>
 </template>
@@ -13,10 +13,14 @@
 <script>
 export default {
 name: "posts_style",
-props: ["postList"],
+//props: ["postList"],
 data: function() {
 return {
-}}}
+}},
+  computed: {
+    posting(){ return this.$store.getters.posting },
+  }
+}
 </script>
 
 <style scoped>
