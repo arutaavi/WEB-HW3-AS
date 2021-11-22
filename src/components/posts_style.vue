@@ -1,13 +1,12 @@
 <template>
   <div class = "post">
-    <div class= "post" v-for = "post in posting" :key="post.id">
-      <img :src="post.profilePicture" alt="Account" class="post-heading">
+    <div class= "post" v-for = "post in posting" :key="post.date">
+      <img :src="post.profilePicture" alt="Account" class="post-heading" width="50">
       <p class = "post-heading">{{post.date}}</p>
-      <img class="post-content" v-bind:src="post.postPicture">
+      <img class="post-content" v-bind:src="post.postPicture" width="500">
       <p class = "post-content">{{post.text}}</p>
-      <input v-on:click="IncreaseLikes" type="image" class = "like-button" name="Like" src="/src/assets/Like.png" alt="Like">
-      <span class="likes">Likes: {{post.likes}}</span>
-      <button v-on:click="IncreaseLikes ">  Increase price </button>
+      <img @click="helper(post.button)" class="like-button" src="@/assets/Like.png" alt="Like">
+      <span class="likes">Likes: {{post.likes}} </span>
 
     </div>
   </div>
@@ -24,9 +23,19 @@ export default {
     posting(){ return this.$store.getters.posting },
   },
   methods: {
-    IncreaseLikes: function() {
-      this.$store.commit("IncreaseLikes")
+    helper(button) {
+      this[button]();
     },
+    button1: function() {this.$store.commit("button1")},
+    button2: function() {this.$store.commit("button2")},
+    button3: function() {this.$store.commit("button3")},
+    button4: function() {this.$store.commit("button4")},
+    button5: function() {this.$store.commit("button5")},
+    button6: function() {this.$store.commit("button6")},
+    button7: function() {this.$store.commit("button7")},
+    button8: function() {this.$store.commit("button8")},
+    button9: function() {this.$store.commit("button9")},
+    button10: function() {this.$store.commit("button10")},
   },
 }
 </script>
@@ -123,7 +132,7 @@ nav div.account {
 }
 
 .post-heading {
-  height: 22px;
+  height: 50px;
   flex-grow: 4;
   padding: 10px;
 }
@@ -171,9 +180,18 @@ nav div.account {
   margin: 0;
 }
 
+.like-button:hover {
+  cursor: pointer;
+}
+
 .like-button input {
   height: 100%;
   margin: 0;
+}
+
+.likes {
+  position: relative;
+  bottom: 15px;
 }
 
 footer {

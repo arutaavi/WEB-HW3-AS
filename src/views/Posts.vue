@@ -1,8 +1,7 @@
 <template>
   <div class="main">
-    <h2>POSTS</h2>
     <posts_style> </posts_style>
-    <button v-on:click="ResetLikes ">  Reset Likes </button>
+    <button class="reset" v-on:click="ResetLikes">  Reset Likes </button>
   </div>
 </template>
 <script>
@@ -18,3 +17,10 @@ export default {
     return{}}}
 </script>
 
+<style>
+.reset {
+  margin-top: 20px;
+  height: 40px;
+  width: 100px;
+}
+</style>

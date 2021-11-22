@@ -1,9 +1,9 @@
 <template>
 <div class="flex-containeer">
     <div>
-        <img src="src/images/NoteIt.png" alt="NoteIt">
+        <img src="@/assets/NoteIt.png" alt="NoteIt">
         <div class="helper">
-            <img src="src/images/NoteIt.png" alt="NoteIt">
+            <img src="@/assets/NoteIt.png" alt="NoteIt">
         </div>
         <h1>Welcome to postIt!</h1>
         <p><a href='index.html'>Create an Account</a></p>
